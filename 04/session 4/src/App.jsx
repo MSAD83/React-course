@@ -1,17 +1,22 @@
-import React from 'react'
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Session from './Session.jsx'
+import React, { useEffect, useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import axios from "axios";
+import { Space, Table, Tag } from "antd";
+import Memo from "./Memo";
 
-function App (){
-  return ( 
-    <div>
-      <Session />
-    </div>
-  )
+function App() {
+
+return (
+  <div>
+    <Memo/>
+  </div>
+)
+
+
 }
+
 
 //   const [count, setCount] = useState(0)
 
@@ -41,5 +46,4 @@ function App (){
 //   )
 //
 
-
-export default App
+export default App;
