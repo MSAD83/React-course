@@ -95,6 +95,8 @@ describe(()=>{
 })
 ```
 
+ALLURE:
+
 For installing the allure-jest you can use this command:
 
 ```
@@ -107,4 +109,39 @@ For connecting the allure to jest you have to set this in your jset.config.js fi
 const config = {
   testEnvironment: "allure-jest/jsdom",
 };
+```
+
+For intalling the allure to your project:
+
+```
+npm install --save-dev allure-jest
+```
+
+For changing the allure path to say has allure just with calling allure :
+
+```
+$AllureBinPath = "path of your allure bin "
+
+$NewPath = (([Environment]::GetEnvironmentVariable("PATH", "User") -split ";") | ?{ $_ -and $_ -notlike "*\allure-*\bin" }) -join ";"
+
+[Environment]::SetEnvironmentVariable("PATH", "$NewPath;$AllureBinPath", "User")
+
+```
+
+If the Jest version is lower than 27, install Circus and configure Jest to use it as the test runner:
+
+```
+npm install --save-dev jest-circus
+```
+
+```
+const config = {
+  testRunner: "jest-circus/runner",
+};
+```
+
+For creating allure report in your test :
+
+```
+allure serve allure-results
 ```
