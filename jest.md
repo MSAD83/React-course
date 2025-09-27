@@ -1,9 +1,24 @@
-jest:
+Jest:
+
+installing jest:
+
+```
+npm install --save-dev jest
+```
+
+then add jest to your scripts:
+
+```
+  "scripts": {
+    "test": "jest"
+  }
+```
+
 you have to use `.test.js` for starting the test files or using a folder with name of `__test__` an then every .js files below the folder is the test files
 
 Another way to use the test file is typing the file like `.spec.js`
 
-run the test with `npm run test`
+run the test with `npm run test` or `npm test`
 
 we use `describe` and then `test` to start the test file:
 
@@ -155,6 +170,7 @@ If the Jest version is lower than 27, install Circus and configure Jest to use i
 ```
 npm install --save-dev jest-circus
 ```
+
 Then update your config:
 
 ```
@@ -163,6 +179,7 @@ module.exports = {
   testEnvironment: 'allure-jest/node', // or 'allure-jest/jsdom'
 };
 ```
+
 For creating allure report in your test :
 
 ```
