@@ -103,12 +103,35 @@ For installing the allure-jest you can use this command:
 npm install --save-dev allure-jest
 ```
 
-For connecting the allure to jest you have to set this in your jset.config.js file:
+Install the Allure Jest adapter and environment:
 
 ```
-const config = {
-  testEnvironment: "allure-jest/jsdom",
+npm install --save-dev allure-jest jest-environment-node
+```
+
+If you're using DOM-based tests (e.g., React), install the JSDOM environment instead:
+
+```
+npm install --save-dev allure-jest jest-environment-jsdom
+```
+
+For connecting the allure to jest you have to set this in your jset.config.js file:
+
+For Node-based tests:
+
+```
+module.exports = {
+  testEnvironment: 'allure-jest/node',
 };
+```
+
+For browser-based tests:
+
+```
+module.exports = {
+  testEnvironment: 'allure-jest/jsdom',
+};
+
 ```
 
 For intalling the allure to your project:
@@ -125,7 +148,6 @@ $AllureBinPath = "path of your allure bin "
 $NewPath = (([Environment]::GetEnvironmentVariable("PATH", "User") -split ";") | ?{ $_ -and $_ -notlike "*\allure-*\bin" }) -join ";"
 
 [Environment]::SetEnvironmentVariable("PATH", "$NewPath;$AllureBinPath", "User")
-
 ```
 
 If the Jest version is lower than 27, install Circus and configure Jest to use it as the test runner:
@@ -133,13 +155,14 @@ If the Jest version is lower than 27, install Circus and configure Jest to use i
 ```
 npm install --save-dev jest-circus
 ```
+Then update your config:
 
 ```
-const config = {
-  testRunner: "jest-circus/runner",
+module.exports = {
+  testRunner: 'jest-circus/runner',
+  testEnvironment: 'allure-jest/node', // or 'allure-jest/jsdom'
 };
 ```
-
 For creating allure report in your test :
 
 ```
