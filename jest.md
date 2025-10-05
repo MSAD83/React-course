@@ -185,3 +185,7 @@ For creating allure report in your test :
 ```
 allure serve allure-results
 ```
+
+
+whats the diffrences between findBy, queryBy, getBy in jest: 
+![alt text](assets/jest1.png)
