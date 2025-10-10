@@ -154,6 +154,22 @@ For intalling the allure to your project:
 ```
 npm install --save-dev allure-jest
 ```
+For installing `jest-allure2` and using it in your jest.config.js file :
+```
+npm install --save-dev jest-allure2 allure-commandline
+npm install --save-dev jest-allure2-reporter allure-commandline
+module.exports = {
+  testEnvironment: 'jest-allure2-reporter/environment-jsdom',
+  reporters: [
+    'default',
+    ['jest-allure2-reporter', { resultsDir: 'allure-results' }]
+  ],
+  transform: {
+    '^.+\\.[tj]sx?$': 'babel-jest'
+  },
+};
+
+```
 
 For changing the allure path to say has allure just with calling allure :
 
