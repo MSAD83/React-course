@@ -6,6 +6,19 @@ installing jest:
 npm install --save-dev jest
 ```
 
+For adding babel to file and useing the .jsx file :
+```
+npm install --save-dev @babel/core @babel/cli @babel/preset-react @babel/preset-env
+
+{
+  "presets": [
+    ["@babel/preset-react", { "runtime": "automatic" }],
+    "@babel/preset-env"
+  ]
+}
+
+```
+
 then add jest to your scripts:
 
 ```
@@ -205,3 +218,8 @@ allure serve allure-results
 
 whats the diffrences between findBy, queryBy, getBy in jest: 
 ![alt text](assets/jest1.png)
+
+
+
+
+
