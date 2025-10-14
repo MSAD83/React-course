@@ -9,16 +9,31 @@ npm install --save-dev jest
 For adding babel to file and useing the .jsx file :
 ```
 npm install --save-dev @babel/core @babel/cli @babel/preset-react @babel/preset-env
-
-{
-  "presets": [
-    ["@babel/preset-react", { "runtime": "automatic" }],
-    "@babel/preset-env"
-  ]
-}
+```
+For babel.config.js:
+```
+module.exports = {
+  presets: [
+    "@babel/preset-env",
+    ["@babel/preset-react", { runtime: "automatic" }],
+  ],
+};
 
 ```
+For jest.config.js with babel:
+```
+module.exports = {
+  testEnvironment: 'jest-allure2-reporter/environment-jsdom',
+  reporters: [
+    'default',
+    ['jest-allure2-reporter', { resultsDir: 'allure-results' }]
+  ],
+  transform: {
+    '^.+\\.[tj]sx?$': 'babel-jest'
+  },
+};
 
+```
 then add jest to your scripts:
 
 ```
