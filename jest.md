@@ -235,6 +235,11 @@ whats the diffrences between findBy, queryBy, getBy in jest:
 ![alt text](assets/jest1.png)
 
 
-
+other diffrent tools to use : 
+`https://www.chaijs.com/`
+`https://sinonjs.org/`
+`https://mochajs.org/`
+`https://karma-runner.github.io/latest/index.html`
+`https://playwright.dev/`
 
 
